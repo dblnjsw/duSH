@@ -27,10 +27,9 @@ echo "开始下载$1,$2"
 	echo '广告删除失败'
 	exit 1
 }
-
+mv "${c}" /root/zipdown/$2
+rename .vtt .srt /root/zipdown/$2/*/*.vtt
 {
-	mv "${c}" /root/zipdown/$2 &&
-	rename .vtt .srt /root/zipdown/$2/*/*.vtt &&
 	echo "srt后缀修改完成" &&
 	mv /root/zipdown/$2 /root/course &&
 	rm -rf /root/zipdown/$2
